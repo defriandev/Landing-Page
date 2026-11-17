@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UMKMDigital - Jasa Pembuatan Landing Page untuk UMKM | Siap Pakai 3 Hari</title>
+    <meta name="description" content="Jasa pembuatan landing page terima beres untuk UMKM. Cepat, mobile-friendly, copywriting memikat, dan langsung terhubung ke WhatsApp." />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- ======================================================== -->
+    <!-- META PIXEL BASE CODE (FACEBOOK PIXEL)                   -->
+    <!-- ======================================================== -->
+    <script>
+      /**
+       * KONFIGURASI PIXEL ID:
+       * Silakan ubah string 'YOUR_PIXEL_ID_HERE' di bawah ini dengan
+       * nomor Pixel ID dari Meta Events Manager bisnis Anda.
+       * Contoh: const PIXEL_ID = '109823471928374';
+       */
+      const PIXEL_ID = 'YOUR_PIXEL_ID_HERE'; // <-- GANTI NOMOR PIXEL ID DI SINI
+
+      // Inisialisasi library standar Meta Pixel (fbevents.js)
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      // Proteksi eksekusi: Inisialisasi hanya jika ID valid atau buat fallback terisolasi
+      if (typeof window.fbq === 'function') {
+        if (PIXEL_ID && PIXEL_ID !== 'YOUR_PIXEL_ID_HERE') {
+          fbq('init', PIXEL_ID);
+          fbq('track', 'PageView');
+        } else {
+          // Inisialisasi fallback aman untuk preview lokal agar pemanggilan fbq() tidak melempar uncaught error
+          fbq('init', '000000000000000');
+          fbq('track', 'PageView');
+          console.info('%c[Meta Pixel]%c Script terpasang dalam mode placeholder. Silakan masukkan Pixel ID asli Anda di index.html atau src/utils/pixel.js', 'color:#2563EB;font-weight:bold', 'color:inherit');
+        }
+      }
+    </script>
+    <!-- ======================================================== -->
+    <!-- END META PIXEL BASE CODE                                 -->
+    <!-- ======================================================== -->
+  </head>
+  <body class="font-body text-[#0F172A] bg-white antialiased selection:bg-[#2563EB] selection:text-white">
+    <!-- Meta Pixel Fallback Noscript -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1" alt="Meta Pixel" />
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
